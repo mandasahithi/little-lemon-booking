@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Little Lemon Restaurant Design System */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@layer base {
+  :root {
+    /* Little Lemon Brand Colors - Mediterranean inspired */
+    --background: 45 25% 97%;
+    --foreground: 25 15% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 25 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 15% 15%;
+
+    /* Primary - Warm lemon yellow */
+    --primary: 51 100% 55%;
+    --primary-foreground: 25 15% 15%;
+    --primary-light: 51 100% 65%;
+    --primary-dark: 51 100% 45%;
+
+    /* Secondary - Mediterranean olive green */
+    --secondary: 75 35% 45%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 75 35% 55%;
+    --secondary-dark: 75 35% 35%;
+
+    /* Accent - Warm terracotta */
+    --accent: 15 75% 60%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 15 75% 70%;
+
+    /* Success - Fresh herb green */
+    --success: 120 45% 45%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning & Error */
+    --warning: 35 100% 55%;
+    --warning-foreground: 25 15% 15%;
+    
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Neutral tones */
+    --muted: 45 15% 92%;
+    --muted-foreground: 25 10% 45%;
+
+    --border: 45 20% 88%;
+    --input: 45 20% 88%;
+    --ring: 51 100% 55%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-warm: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--primary)));
+    --gradient-fresh: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--success)));
+    
+    /* Shadows */
+    --shadow-soft: 0 2px 20px -2px hsl(var(--primary) / 0.1);
+    --shadow-warm: 0 8px 30px -8px hsl(var(--accent) / 0.3);
+    --shadow-card: 0 4px 25px -4px hsl(var(--foreground) / 0.1);
+  }
+
+  .dark {
+    --background: 25 25% 8%;
+    --foreground: 45 25% 95%;
+
+    --card: 25 20% 12%;
+    --card-foreground: 45 25% 95%;
+
+    --popover: 25 20% 12%;
+    --popover-foreground: 45 25% 95%;
+
+    --primary: 51 100% 60%;
+    --primary-foreground: 25 15% 15%;
+
+    --secondary: 75 30% 35%;
+    --secondary-foreground: 45 25% 95%;
+
+    --accent: 15 70% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 25 15% 18%;
+    --muted-foreground: 45 10% 65%;
+
+    --border: 25 20% 20%;
+    --input: 25 20% 20%;
+    --ring: 51 100% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
