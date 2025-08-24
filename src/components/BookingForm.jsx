@@ -121,33 +121,39 @@ const BookingForm = () => {
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Date Selection */}
           <div>
-            <label className="flex items-center space-x-2 text-sm font-medium text-foreground mb-2">
+            <label htmlFor="booking-date" className="flex items-center space-x-2 text-sm font-medium text-foreground mb-2">
               <Calendar size={16} />
               <span>Date *</span>
             </label>
             <input
+              id="booking-date"
               type="date"
               min={today}
               value={formData.date}
               onChange={(e) => handleInputChange('date', e.target.value)}
+              aria-invalid={!!errors.date}
+              aria-describedby={errors.date ? 'date-error' : undefined}
               className={`w-full p-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all ${
                 errors.date ? 'border-destructive' : 'border-input'
               }`}
             />
             {errors.date && (
-              <p className="text-destructive text-sm mt-1">{errors.date}</p>
+              <p id="date-error" className="text-destructive text-sm mt-1">{errors.date}</p>
             )}
           </div>
 
           {/* Time Selection */}
           <div>
-            <label className="flex items-center space-x-2 text-sm font-medium text-foreground mb-2">
+            <label htmlFor="booking-time" className="flex items-center space-x-2 text-sm font-medium text-foreground mb-2">
               <Clock size={16} />
               <span>Time *</span>
             </label>
             <select
+              id="booking-time"
               value={formData.time}
               onChange={(e) => handleInputChange('time', e.target.value)}
+              aria-invalid={!!errors.time}
+              aria-describedby={errors.time ? 'time-error' : undefined}
               className={`w-full p-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all ${
                 errors.time ? 'border-destructive' : 'border-input'
               }`}
@@ -158,19 +164,22 @@ const BookingForm = () => {
               ))}
             </select>
             {errors.time && (
-              <p className="text-destructive text-sm mt-1">{errors.time}</p>
+              <p id="time-error" className="text-destructive text-sm mt-1">{errors.time}</p>
             )}
           </div>
 
           {/* Number of Guests */}
           <div>
-            <label className="flex items-center space-x-2 text-sm font-medium text-foreground mb-2">
+            <label htmlFor="booking-guests" className="flex items-center space-x-2 text-sm font-medium text-foreground mb-2">
               <Users size={16} />
               <span>Number of Guests *</span>
             </label>
             <select
+              id="booking-guests"
               value={formData.guests}
               onChange={(e) => handleInputChange('guests', parseInt(e.target.value))}
+              aria-invalid={!!errors.guests}
+              aria-describedby={errors.guests ? 'guests-error' : undefined}
               className={`w-full p-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all ${
                 errors.guests ? 'border-destructive' : 'border-input'
               }`}
@@ -182,19 +191,20 @@ const BookingForm = () => {
               ))}
             </select>
             {errors.guests && (
-              <p className="text-destructive text-sm mt-1">{errors.guests}</p>
+              <p id="guests-error" className="text-destructive text-sm mt-1">{errors.guests}</p>
             )}
           </div>
 
           {/* Seating Preference */}
-          <div>
-            <label className="flex items-center space-x-2 text-sm font-medium text-foreground mb-3">
+          <fieldset>
+            <legend className="flex items-center space-x-2 text-sm font-medium text-foreground mb-3">
               <MapPin size={16} />
               <span>Seating Preference</span>
-            </label>
+            </legend>
             <div className="flex space-x-4">
-              <label className="flex items-center space-x-2 cursor-pointer">
+              <div>
                 <input
+                  id="seating-indoor"
                   type="radio"
                   name="seating"
                   value="indoor"
@@ -202,10 +212,11 @@ const BookingForm = () => {
                   onChange={(e) => handleInputChange('seating', e.target.value)}
                   className="w-4 h-4 text-primary border-input focus:ring-primary"
                 />
-                <span>Indoor</span>
-              </label>
-              <label className="flex items-center space-x-2 cursor-pointer">
+                <label htmlFor="seating-indoor" className="ml-2 cursor-pointer">Indoor</label>
+              </div>
+              <div>
                 <input
+                  id="seating-outdoor"
                   type="radio"
                   name="seating"
                   value="outdoor"
@@ -213,18 +224,19 @@ const BookingForm = () => {
                   onChange={(e) => handleInputChange('seating', e.target.value)}
                   className="w-4 h-4 text-primary border-input focus:ring-primary"
                 />
-                <span>Outdoor</span>
-              </label>
+                <label htmlFor="seating-outdoor" className="ml-2 cursor-pointer">Outdoor</label>
+              </div>
             </div>
-          </div>
+          </fieldset>
 
           {/* Special Requests */}
           <div>
-            <label className="flex items-center space-x-2 text-sm font-medium text-foreground mb-2">
+            <label htmlFor="booking-specialRequests" className="flex items-center space-x-2 text-sm font-medium text-foreground mb-2">
               <MessageSquare size={16} />
               <span>Special Requests (Optional)</span>
             </label>
             <textarea
+              id="booking-specialRequests"
               value={formData.specialRequests}
               onChange={(e) => handleInputChange('specialRequests', e.target.value)}
               placeholder="Any dietary restrictions, celebrations, or special accommodations..."
