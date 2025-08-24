@@ -1,57 +1,33 @@
-<<<<<<< HEAD
-# little-lemon-booking
-=======
+# 🍋 Little Lemon Table Booking Website
 
+A **React-based table reservation system** for the Little Lemon Restaurant.  
+This project allows customers to **book tables online**, view their reservations, and experience a responsive, user-friendly interface — all built **without a backend database** (data is stored in `localStorage`).
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## ✨ Features
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- 📅 **Table Booking System**
+  - Select reservation **date & time**
+  - Choose **number of guests**
+  - Pick **indoor/outdoor seating**
+  - Add **special requests**
 
-# Step 3: Install the necessary dependencies.
-npm i
+- 💾 **Local Storage Data Persistence**
+  - Bookings are saved locally (survive refresh/browser close)
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+- 👤 **My Reservations Page**
+  - View all saved reservations
+  - Cancel/remove bookings
 
-**Edit a file directly in GitHub**
+- 🎨 **Responsive UI**
+  - Works seamlessly on **desktop, tablet, and mobile**
+  - Clean **Tailwind css styling**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- ♿ **Accessibility**
+  - Semantic HTML
+  - Keyboard navigation
+  - ARIA labels
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/3bdcaeeb-10b1-4299-b468-d7bc869459fa) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
->>>>>>> 9f780de (Initial commit)
+- 🧪 **Unit Testing**
+  - Core components and booking form validation tested with **Jest + React Testing Library**
